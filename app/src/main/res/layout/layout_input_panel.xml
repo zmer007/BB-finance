@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/input_panel_rootView"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/base_bar_height"
+              android:layout_gravity="bottom"
+              android:background="#fff"
+              android:orientation="vertical">
+
+    <View
+        style="@style/Line"
+        android:layout_height="1px"/>
+
+    <LinearLayout
+        android:id="@+id/lip_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <ImageView
+            android:id="@+id/lip_imgView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:src="@drawable/ic_money_normal"/>
+
+        <EditText
+            android:id="@+id/lip_editText"
+            style="@style/Edit2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/sum_outlay"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"/>
+
+        <TextView
+            android:id="@+id/lip_sendView"
+            android:layout_width="38dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/ic_send"
+            android:enabled="false"/>
+
+    </LinearLayout>
+</LinearLayout>

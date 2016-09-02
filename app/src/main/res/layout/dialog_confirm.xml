@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/dc_contentView"
+        style="@style/Head2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="content"/>
+
+    <View
+        android:id="@+id/dc_h_line"
+        style="@style/Line"
+        android:layout_height="1px"
+        android:layout_below="@id/dc_contentView"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/dc_h_line"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dc_cancelView"
+            style="@style/Content1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:clickable="true"
+            android:text="@string/cancel"/>
+
+        <View
+            style="@style/Line"
+            android:layout_width="1px"/>
+
+        <TextView
+            android:id="@+id/dc_okView"
+            style="@style/Content1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/button_accent"
+            android:clickable="true"
+            android:text="@string/ok"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

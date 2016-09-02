@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/io_rootView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/base_bar_height"
+    android:layout_marginTop="1px"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/io_timeView"
+            style="@style/Content2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#2060A0"/>
+
+        <CheckBox
+            android:id="@+id/io_selectBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="false"/>
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/io_outlayView"
+        style="@style/Content1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:gravity="left"
+        android:maxLines="2"
+        android:textColor="#333333"/>
+
+    <TextView
+        android:id="@+id/io_totalConsumeView"
+        style="@style/Content2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#2060A0"/>
+
+</LinearLayout>

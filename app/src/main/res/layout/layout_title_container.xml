@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/ltc_baseTitlePanel"
+        layout="@layout/title_base"/>
+
+    <include
+        android:id="@+id/ltc_consumerTitlePanel"
+        layout="@layout/title_consumer"/>
+
+    <include
+        android:id="@+id/ltc_optionMenuPanel"
+        layout="@layout/title_option_menu"/>
+</merge>

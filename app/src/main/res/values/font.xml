@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Head1">
+        <item name="android:textSize">@dimen/font_std_big1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/blackDark</item>
+    </style>
+
+    <style name="Head1.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Head2" parent="Head1">
+        <item name="android:textSize">@dimen/font_std_big2</item>
+    </style>
+
+    <style name="Head2.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Content1">
+        <item name="android:textSize">@dimen/font_std_big2</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/blackDark</item>
+    </style>
+
+    <style name="Content1.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Content2" parent="Content1">
+        <item name="android:textSize">@dimen/font_std_normal_2</item>
+    </style>
+
+    <style name="Content2.gray">
+        <item name="android:textColor">@color/blackDark</item>
+    </style>
+
+    <style name="Content2.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Edit2">
+        <item name="android:textSize">@dimen/font_std_big2</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:imeOptions">actionSend</item>
+        <item name="android:textColor">@color/blackDark</item>
+        <item name="android:minHeight">@dimen/base_bar_height</item>
+        <item name="android:background">@drawable/input_edit_bg</item>
+    </style>
+</resources>

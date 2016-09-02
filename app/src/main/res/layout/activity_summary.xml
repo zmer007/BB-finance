@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.rubo.dfer.assistant.widget.keyboardListenerLayout
+    android:id="@+id/as_keyboardListenerView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/as_inputPanel"
+        layout="@layout/layout_input_panel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_bar_height"
+        android:layout_alignParentBottom="true"/>
+
+    <com.rubo.dfer.assistant.widget.pullswipe.PullSwipeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/as_inputPanel">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/as_outlayList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#eeeeee"/>
+    </com.rubo.dfer.assistant.widget.pullswipe.PullSwipeLayout>
+
+</com.rubo.dfer.assistant.widget.keyboardListenerLayout>

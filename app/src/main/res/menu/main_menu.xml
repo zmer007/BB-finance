@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/mm_summary">
+        <item
+            android:id="@+id/menu_sort_by_time"
+            android:title="@string/sort_by_time"/>
+        <item
+            android:id="@+id/menu_sort_by_outlay"
+            android:title="@string/sort_by_outlay"/>
+        <item
+            android:id="@+id/menu_reset"
+            android:title="@string/reset"/>
+    </group>
+</menu>

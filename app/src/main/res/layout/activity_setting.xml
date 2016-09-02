@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/as_exportView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/export_data"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/as_jsonInfoView"
+            style="@style/Content2.gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_back"
+            android:visibility="gone"/>
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/as_copy"
+        style="@style/Content2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/copy"
+        android:visibility="gone"/>
+
+</LinearLayout>

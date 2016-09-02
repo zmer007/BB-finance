@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/base_bar_height"
+    android:background="@color/colorPrimary"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:visibility="gone">
+
+    <LinearLayout
+        android:id="@+id/tc_leftContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tc_leftView"
+            style="@style/Content1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#dedede"/>
+
+        <TextView
+            android:id="@+id/tc_leftSubView"
+            style="@style/Content2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#e8e8e8"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tc_middleView"
+        style="@style/Content1.White"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/total_consume"/>
+
+    <ImageView
+        android:id="@+id/tc_menuView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@drawable/ic_menu"/>
+</LinearLayout>
