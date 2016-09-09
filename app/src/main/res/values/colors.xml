@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2196F3</color>
-    <color name="colorPrimaryDark">#1565C0</color>
-    <color name="colorAccent">#D500F9</color>
-    <color name="colorAccentDark">#0288D1</color>
+    <color name="colorPrimary">@color/green</color>
+    <color name="colorPrimaryDark">@color/lavender</color>
+    <color name="colorAccent">@color/mediumorchid</color>
+    <color name="colorAccentDark">@color/blueviolet</color>
 
-    <color name="green">#55a5a5</color>
+    <color name="green">#7ecc7e</color>
+    <color name="stateBarDark">#589658</color>
 
-    <color name="white">#ffffff</color>
-    <color name="gray">#eeeeee</color>
     <color name="grayDark">#d7d7d7</color>
-    <color name="black">#000000</color>
     <color name="blackDark">#222222</color>
 
 </resources>

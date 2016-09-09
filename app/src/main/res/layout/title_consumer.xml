@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/base_bar_height"
     android:background="@color/colorPrimary"
+    android:clickable="true"
     android:gravity="center_vertical"
     android:orientation="horizontal"
     android:paddingLeft="10dp"
@@ -20,22 +21,21 @@
 
         <TextView
             android:id="@+id/tc_leftView"
-            style="@style/Content1"
+            style="@style/Content1.White"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#dedede"/>
+            android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/tc_leftSubView"
-            style="@style/Content2"
+            style="@style/Content2.White"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#e8e8e8"/>
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
     <TextView
         android:id="@+id/tc_middleView"
         style="@style/Content1.White"
+        android:textColor="@color/colorAccentDark"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"

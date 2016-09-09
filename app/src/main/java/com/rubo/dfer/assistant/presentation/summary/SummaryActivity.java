@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.Animation;
 import android.view.inputmethod.EditorInfo;
 import android.widget.TextView;
 
@@ -15,9 +16,11 @@ import com.rubo.dfer.assistant.R;
 import com.rubo.dfer.assistant.callback.BaseCallback;
 import com.rubo.dfer.assistant.data.OutlayModule;
 import com.rubo.dfer.assistant.data.entry.Outlay;
+import com.rubo.dfer.assistant.data.util.SimpleAnimationListener;
 import com.rubo.dfer.assistant.data.util.TwoTuples;
 import com.rubo.dfer.assistant.presentation.TitleActivity;
 import com.rubo.dfer.assistant.presentation.setting.SettingActivity;
+import com.rubo.dfer.assistant.utils.AnimUtils;
 import com.rubo.dfer.assistant.utils.ToastUtils;
 import com.rubo.dfer.assistant.widget.keyboardListenerLayout;
 import com.rubo.dfer.assistant.widget.keyboardListenerLayout.SimpleKeyboardListener;
@@ -67,10 +70,11 @@ public class SummaryActivity extends TitleActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        outlayModule = OutlayModule.getInstance();
         setContentView(R.layout.activity_summary);
-        showConsumerTitle();
         ButterKnife.bind(this);
+
+        outlayModule = OutlayModule.getInstance();
+        showConsumerTitle();
 
         data = new ArrayList<>();
         adapter = new OutlayListAdapter(data);
@@ -243,8 +247,15 @@ public class SummaryActivity extends TitleActivity {
     }
 
     public void showSelectView() {
-        showOptionMenuTitle();
-        inputPanel.setVisibility(View.GONE);
+        showOptionMenuTitle(R.anim.fade_in);
+        Animation dropDown = AnimUtils.loadAnimation(R.anim.drop_down);
+        dropDown.setAnimationListener(new SimpleAnimationListener() {
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                inputPanel.setVisibility(View.GONE);
+            }
+        });
+        inputPanel.startAnimation(dropDown);
     }
 
     public void setSelectedNumber(int number) {
@@ -279,9 +290,9 @@ public class SummaryActivity extends TitleActivity {
     @Override
     protected void showConsumerTitle() {
         super.showConsumerTitle();
-        if (inputPanel != null) {
-            inputPanel.setVisibility(View.VISIBLE);
-        }
+        Animation anim = AnimUtils.loadAnimation(R.anim.rise_up);
+        inputPanel.setVisibility(View.VISIBLE);
+        inputPanel.startAnimation(anim);
     }
 
     @Override

@@ -1,7 +1,5 @@
 package com.rubo.dfer.assistant.utils;
 
-import java.util.List;
-
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningTaskInfo;
@@ -9,13 +7,19 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.os.Build;
 import android.os.PowerManager;
+import android.support.annotation.ColorRes;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import com.rubo.dfer.assistant.MainApplication;
 import com.rubo.dfer.assistant.R;
+
+import java.util.List;
 
 /**
  * User: lgd(1973140289@qq.com)
@@ -70,9 +74,40 @@ public class SystemUtils {
         return TextUtils.equals(packgeName, topActivity.getPackageName()) && TextUtils.equals(shortClassName, topActivity.getShortClassName());
     }
 
+    /**
+     * 设置剪切板内容
+     */
     public static void setPrimaryClipPlaintText(Context context, CharSequence text) {
         ClipboardManager clipboardManager = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
         clipboardManager.setPrimaryClip(ClipData.newPlainText("", text));
         ToastUtils.showToast(context.getString(R.string.copy_to_clipboard));
+    }
+
+    /**
+     * 获取状态栏调试
+     */
+    public static int getStatusBarHeight() {
+        int result = 0;
+        int resourceId = MainApplication.getInstance().getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = MainApplication.getInstance().getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
+    }
+
+    /***
+     * 设置状态栏颜色，API > 21
+     */
+    public static void changeStatusBarColor(Activity activity, @ColorRes int colorRes) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            activity.getWindow().setStatusBarColor(activity.getResources().getColor(colorRes));
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            ViewGroup contentView = (ViewGroup) activity.findViewById(android.R.id.content);
+            View statusBarView = new View(activity);
+            ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                    getStatusBarHeight());
+            statusBarView.setBackgroundColor(activity.getResources().getColor(colorRes));
+            contentView.addView(statusBarView, lp);
+        }
     }
 }

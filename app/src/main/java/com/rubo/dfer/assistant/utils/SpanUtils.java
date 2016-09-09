@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 /**
  * User: lgd(1973140289@qq.com)
  * Date: 2016-08-30
- * Function:
+ * Function: 改变字体样式的工具类
  */
 public class SpanUtils {
     public static void setTextViewSpan(TextView tv, String regex) {

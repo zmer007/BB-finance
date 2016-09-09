@@ -10,8 +10,6 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 
 import com.rubo.dfer.assistant.R;
@@ -120,7 +118,7 @@ public class OutlayListAdapter extends RecyclerView.Adapter<OutlayHolder> {
     }
 
     private void setAnimation(View viewToAnimate) {
-        Animation animation = AnimationUtils.loadAnimation(viewToAnimate.getContext(), R.anim.item_animation);
+        Animation animation = AnimationUtils.loadAnimation(viewToAnimate.getContext(), R.anim.item_translate_right);
         viewToAnimate.startAnimation(animation);
     }
 
@@ -186,11 +184,9 @@ public class OutlayListAdapter extends RecyclerView.Adapter<OutlayHolder> {
         void setProperties(Outlay outlay, int mode, Boolean isChecked) {
             if (mode == SELECT_MODE) {
                 checkBox.setVisibility(View.VISIBLE);
-                timeView.setVisibility(View.INVISIBLE);
                 setChecked(isChecked == null ? false : isChecked);
             } else {
-                timeView.setVisibility(View.VISIBLE);
-                checkBox.setVisibility(View.INVISIBLE);
+                checkBox.setVisibility(View.GONE);
                 rootView.setBackgroundColor(itemView.getResources().getColor(R.color.white));
             }
             outlayView.setText(outlay.summary);

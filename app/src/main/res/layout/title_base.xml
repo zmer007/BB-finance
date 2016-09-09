@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/base_bar_height"
     android:background="@color/colorPrimary"
+    android:clickable="true"
     android:gravity="center_vertical"
     android:orientation="horizontal"
     android:paddingLeft="10dp"
@@ -29,6 +30,6 @@
         android:id="@+id/tb_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:src="@drawable/ic_menu"/>
+        android:src="@drawable/ic_menu"
+        android:visibility="invisible"/>
 </LinearLayout>

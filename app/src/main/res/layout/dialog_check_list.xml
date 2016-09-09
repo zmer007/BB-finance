@@ -14,7 +14,7 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/cld_listView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="100dp"/>
 
     <View
@@ -23,7 +23,7 @@
 
     <TextView
         android:id="@+id/cld_ok"
-        style="@style/Content2"
+        style="@style/Head2"
         android:layout_width="match_parent"
         android:layout_height="@dimen/base_item_height"
         android:background="@drawable/button"

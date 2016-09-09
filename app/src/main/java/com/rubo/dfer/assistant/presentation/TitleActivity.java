@@ -8,10 +8,14 @@ import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.rubo.dfer.assistant.R;
+import com.rubo.dfer.assistant.utils.SystemUtils;
 import com.rubo.dfer.assistant.widget.SwipeBackLayout;
 import com.rubo.dfer.assistant.widget.SwipeBackLayout.OnFinishGestureListener;
 
@@ -22,7 +26,6 @@ import com.rubo.dfer.assistant.widget.SwipeBackLayout.OnFinishGestureListener;
  * Function:
  */
 public class TitleActivity extends BaseActivity {
-    private SwipeBackLayout rootView;
     private FrameLayout contentView;
 
     private View baseTitle;
@@ -39,7 +42,7 @@ public class TitleActivity extends BaseActivity {
     }
 
     private void bindView() {
-        rootView = (SwipeBackLayout) findViewById(R.id.at_rootView);
+        SwipeBackLayout rootView = (SwipeBackLayout) findViewById(R.id.at_rootView);
         contentView = (FrameLayout) findViewById(R.id.at_content);
 
         baseTitle = findViewById(R.id.ltc_baseTitlePanel);
@@ -50,7 +53,7 @@ public class TitleActivity extends BaseActivity {
 
         optionMenuTitle = findViewById(R.id.ltc_optionMenuPanel);
 
-        rootView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+        assert rootView != null;
         rootView.setFinishGestureListener(new OnFinishGestureListener() {
             @Override
             public void onFinishActivity() {
@@ -113,6 +116,8 @@ public class TitleActivity extends BaseActivity {
 
         consumerTitle.setVisibility(View.GONE);
         optionMenuTitle.setVisibility(View.GONE);
+
+        resetAnim(consumerTitle, baseTitle, optionMenuTitle);
     }
 
     protected void showConsumerTitle() {
@@ -120,6 +125,26 @@ public class TitleActivity extends BaseActivity {
 
         baseTitle.setVisibility(View.GONE);
         optionMenuTitle.setVisibility(View.GONE);
+
+        resetAnim(consumerTitle, baseTitle, optionMenuTitle);
+
+        SystemUtils.changeStatusBarColor(this, R.color.lavender);
+    }
+
+    private void resetAnim(View... views) {
+        for (View v : views) {
+            v.clearAnimation();
+        }
+    }
+
+    protected void showOptionMenuTitle(int resAnimIn) {
+        Animation animIn = getAnimation(resAnimIn);
+        optionMenuTitle.setVisibility(View.VISIBLE);
+        optionMenuTitle.clearAnimation();
+        optionMenuTitle.startAnimation(animIn);
+
+        baseTitle.setVisibility(View.GONE);
+        SystemUtils.changeStatusBarColor(this, R.color.green);
     }
 
     protected void showOptionMenuTitle() {
@@ -127,5 +152,15 @@ public class TitleActivity extends BaseActivity {
 
         baseTitle.setVisibility(View.GONE);
         consumerTitle.setVisibility(View.GONE);
+
+        resetAnim(consumerTitle, baseTitle, optionMenuTitle);
+    }
+
+    private Animation getAnimation(int resAnim) {
+        Animation anim = AnimationUtils.loadAnimation(this, resAnim);
+        anim.setDuration(300);
+        anim.setFillBefore(true);
+        anim.setInterpolator(new AccelerateInterpolator());
+        return anim;
     }
 }

@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/base_item_height"
     android:layout_marginLeft="40dp"
     android:layout_marginRight="40dp"
-    android:gravity="center"
-    android:orientation="horizontal">
+    android:gravity="center">
 
     <TextView
         android:id="@+id/icl_textView"
-        android:layout_width="0dp"
-        android:textColor="@color/blackDark"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:layout_alignParentLeft="true"
+        android:textColor="@color/blackDark"/>
 
     <CheckBox
         android:id="@+id/icl_checkView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
         android:layout_gravity="center_horizontal"
         android:checked="false"/>
-</LinearLayout>
+</RelativeLayout>

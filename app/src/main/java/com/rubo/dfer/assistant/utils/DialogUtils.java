@@ -18,7 +18,9 @@ import com.rubo.dfer.assistant.widget.checklistdialog.CheckListDialog.OnClickChe
 import java.util.List;
 
 /**
- * User: lgd(1973140289@qq.com) Date: 2016-08-04 Function:
+ * User: lgd(1973140289@qq.com)
+ * Date: 2016-08-04
+ * Function: 弹窗工具类
  */
 public class DialogUtils {
     public static AlertDialog newAlertDialog(Context ctx, String message) {

@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.TextView;
 
 import com.rubo.dfer.assistant.R;
 import com.rubo.dfer.assistant.data.entry.Check;

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/base_bar_height">
 
     <include
         android:id="@+id/ltc_baseTitlePanel"
@@ -12,4 +15,4 @@
     <include
         android:id="@+id/ltc_optionMenuPanel"
         layout="@layout/title_option_menu"/>
-</merge>
+</FrameLayout>

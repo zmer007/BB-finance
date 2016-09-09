@@ -7,6 +7,11 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+/**
+ * User: lgd(1973140289@qq.com)
+ * Date: 2016-09-07
+ * Function: 格式化时间的工具类
+ */
 public class TimeFormatUtils {
     public static final String DEFAULT_TIME = "未知";
     public static final String separator = "/";
